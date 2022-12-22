@@ -6,9 +6,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-        Staff doctor = context.getBean(Doctor.class);
+        Doctor doctor = context.getBean(Doctor.class);
         Staff nurse = context.getBean(Nurse.class);
         doctor.assist();
         nurse.assist();
+        System.out.println(doctor.getQualification());
     }
 }
