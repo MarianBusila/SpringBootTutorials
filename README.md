@@ -781,4 +781,3 @@ class StudentRepositoryTest {
 
 ## References
 - [Spring Boot Complete Tutorial - Master Class](https://www.youtube.com/watch?v=zvR-Oif_nxg)
-- [Spring Boot Microservice Project Full Course in 6 Hours](https://www.youtube.com/watch?v=mPPhcU7oWDU)
