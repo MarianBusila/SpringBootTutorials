@@ -14,7 +14,7 @@ We use a n-tier architecture to model the app
 sudo apt install mongodb-clients
 ```
 
-- start infra (mongodb)
+- start infra (mongodb, postgres)
 ```
 cd infrastructure
 docker-compose up -d
@@ -28,3 +28,5 @@ use products
 show collections
 db.product.find()
 ```
+
+- create order and inventory databases in postgres using pgAdmin (http://localhost:5050)
