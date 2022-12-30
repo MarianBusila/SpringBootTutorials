@@ -30,3 +30,6 @@ db.product.find()
 ```
 
 - create order and inventory databases in postgres using pgAdmin (http://localhost:5050)
+
+## Notes
+- for service to service sync communication, we can use RestTemplate or WebClient (webflux) to make HTTP calls
