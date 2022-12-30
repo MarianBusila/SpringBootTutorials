@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 public class OrderService {
     private final OrderRepository orderRepository;
     private final WebClient webClient;
-    public void placeOrder(OrderRequest orderRequest) {
+    public String placeOrder(OrderRequest orderRequest) {
         Order order = new Order();
         order.setOrderNumber(UUID.randomUUID().toString());
         List<OrderLineItems> orderLineItems = orderRequest.getOrderLineItemsDtos().stream().map(orderLineItemsDto -> mapToDto(orderLineItemsDto)).collect(Collectors.toList());
@@ -40,6 +40,7 @@ public class OrderService {
         boolean allProductsinStock = Arrays.stream(inventoryResponseArray).allMatch(InventoryResponse::isInStock);
         if(allProductsinStock) {
             orderRepository.save(order);
+            return "Order placed successfully";
         }
         else {
             throw  new IllegalArgumentException("One or more products are not in stock, please try again later");
