@@ -53,3 +53,5 @@ spring.cloud.gateway.routes[1].predicates[0]=Path=/api/order
 ```
 spring.security.oauth2.resourceserver.jwt.issuer-uri= http://localhost:8181/realms/spring-boot-microservices-realm
 ```
+
+- for circuit breaker, we can use Resilience4J. In the /actuator endpoints we can see the state of the circuit breakers, the retries, time limits, etc
