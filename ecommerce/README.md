@@ -33,3 +33,23 @@ db.product.find()
 
 ## Notes
 - for service to service sync communication, we can use RestTemplate or WebClient (webflux) to make HTTP calls
+- for service discovery, we can use Spring Cloud Netflix Eureka
+- for api gateway, we can use Spring Cloud Gateway. We can use routes, predicates and filters to control the routing
+
+```
+## Product Service Route
+spring.cloud.gateway.routes[0].id=product-service
+spring.cloud.gateway.routes[0].uri=lb://product-service
+spring.cloud.gateway.routes[0].predicates[0]=Path=/api/product
+
+## Order Service Route
+spring.cloud.gateway.routes[1].id=order-service
+spring.cloud.gateway.routes[1].uri=lb://order-service
+spring.cloud.gateway.routes[1].predicates[0]=Path=/api/order
+```
+
+- for api security, we can use Keyclock
+
+```
+spring.security.oauth2.resourceserver.jwt.issuer-uri= http://localhost:8181/realms/spring-boot-microservices-realm
+```

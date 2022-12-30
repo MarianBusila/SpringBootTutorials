@@ -6,7 +6,12 @@
 - a bean has a lifecycle: Instantiate, PopulateProperties, setBeanName, setBeanFactory, setApplicationContext, afterPropertiesSet, etc -> Bean is ready to use -> Container is shut down -> destroy, custom destroy
 
 ## SpringBoot
-- lombok is a package to reduce boiler plate code like property getter/setters, constructors, builders, etc
+- lombok is a package to reduce boiler plate code like property getter/setters, constructors, builders, etc. Example: @Data, @Builder @NoArgsConstructor, @Getter
+- to read configuration values from application.properties, use a snippet like:
+```java
+@Value("${eureka.username}")
+private String username;
+```
 - @Autowired annotation is used for automatic dependency injection
 - exception handling is done with @ControllerAdvice
 ```java
