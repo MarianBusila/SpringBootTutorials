@@ -57,3 +57,7 @@ spring.security.oauth2.resourceserver.jwt.issuer-uri= http://localhost:8181/real
 - for circuit breaker, retries we can use Spring Cloud Resilience4J. In the /actuator endpoints we can see the state of the circuit breakers, the retries, time limits, etc
 
 - for distributed tracing, we can use Spring Cloud Sleuth to generate the traces and Zipkin to visualize them
+
+- you can use Jib, if you don't want to provide a docker file and have docker installed on your local machine to build/push a container image
+
+- you can use spring.profiles.active to set which application properties file to use for configuration (application-docker.properties, etc)
